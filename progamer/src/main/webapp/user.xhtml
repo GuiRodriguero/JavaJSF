@@ -45,7 +45,8 @@
 			<div class="p-field p-grid">
 			    <label for="password" class="p-col-fixed" style="width:100px">Password</label>
 			    <div class="p-col">
-			        <p:password id="feedback" value="#{userBean.user.password}" feedback="true" required="true" requiredMessage="O campo Senha é obrigatório">
+			        <p:password id="feedback" value="#{userBean.user.password}" feedback="true" required="true" requiredMessage="O campo Senha é obrigatório" validatorMessage="A senha deve ter pelo menos 8 caracteres">
+						<f:validateLength minimum="8"/>
 			        	<f:ajax event="blur" render="messages" />
 			        </p:password>
 			    </div>
