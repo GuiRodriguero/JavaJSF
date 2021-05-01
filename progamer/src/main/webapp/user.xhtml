@@ -27,7 +27,8 @@
 			<div class="p-field p-grid">
 			    <label for="email" class="p-col-fixed" style="width:100px">Email</label>
 			    <div class="p-col">
-			        <p:inputText id="email" value="#{userBean.user.email}" required="true" requiredMessage="O campo Email é obrigatório">
+			        <p:inputText id="email" value="#{userBean.user.email}" required="true" requiredMessage="O campo Email é obrigatório" validatorMessage="#Email fora dos padrões xxx@xxx.xxx">
+			        	<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
 			        	<f:ajax event="blur" render="messages" />
 			        </p:inputText>
 			    </div>
